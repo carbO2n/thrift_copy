@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+   --green: #27ae60;
+   --black: #333;
+   --white: #fff;
+   --bg-color: #eee;
+   --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   --border: .1rem solid var(--black);
+}
+
+* {
+   font-family: 'Poppins', sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration: none;
+   text-transform: capitalize;
+}
+
+html {
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body {
+   background-color: var(--bg-color);
+}
+
+/* Navigation Bar */
+.nav {
+    background: var(--green);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav__logo a {
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav__list li {
+    margin-left: 2rem;
+}
+
+.nav__list a {
+    color: var(--white);
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav__list a:hover {
+    color: var(--black);
+    transform: scale(1.1);
+}
+
+.nav__toggle {
+    display: none;
+    font-size: 2.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav__list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--green);
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav__list.show {
+        display: flex;
+    }
+
+    .nav__list li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+}
+
+/* General Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Summary Cards */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.summary-cards .box {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.summary-cards .box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.summary-cards .box p {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .summary-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4rem;
+}
+
+table th, table td {
+    border: 1px solid var(--black);
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+table th {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+table td {
+    background-color: var(--white);
+}
+
+@media (max-width: 768px) {
+    table th, table td {
+        font-size: 1.4rem;
+    }
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:focus {
+    outline: none;
+}
+
+.order-actions {
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.deliver {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.deliver:hover {
+    background-color: #1e8449;
+    transform: scale(1.05);
+}
+
+.cancel {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.cancel:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.received {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.received:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.confirm-payment-btn {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.confirm-payment-btn:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width:991px){
+   html {
+      font-size: 55%;
+   }
+}
+
+@media (max-width:768px){
+   .product-display {
+      overflow-y: scroll;
+   }
+
+   .product-display .product-display-table {
+      width: 80rem;
+   }
+}
+
+@media (max-width:450px){
+   html {
+      font-size: 50%;
+   }
+}
